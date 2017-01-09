@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+  "frameworks": {
+    "net462": {
+      "dependencies": {
+        "Microsoft.AspNetCore.Mvc": "1.1.0",
+        "System.Drawing.Primitives": "4.3.0"
+      }
+      //,"frameworkAssemblies": {"System.Drawing": "4.0.0.0"}
+    }
+  },
+  "dependencies": {
+    "Microsoft.Azure.Common": "2.1.0",
+    "Microsoft.Azure.Devices.Client": "1.1.4",
+    "Microsoft.Azure.Management.Compute": "13.1.0-prerelease",
+    "Microsoft.Azure.Management.Fluent": "1.0.0-beta4",
+    "Microsoft.Azure.Mobile.Client": "3.0.3",
+    "PDFsharp": "1.50.4000-beta3b",
+    "System.Security.Cryptography.Algorithms": "4.3.0"
+  }
+}

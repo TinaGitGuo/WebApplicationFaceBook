@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "exports": {
+    "MGX.Web.Common/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/MGX.Web.Common.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/MGX.Web.Common.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/MGX.Web.Common.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}

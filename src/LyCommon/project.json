@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Microsoft.AspNetCore.Http.Abstractions": "1.1.0",
+    "Microsoft.AspNetCore.StaticFiles": "1.1.0",
+    "Microsoft.Extensions.FileProviders.Physical": "1.1.0",
+    "System.Drawing.Primitives": "4.3.0",
+    "System.IO.FileSystem": "4.3.0"
+  },
+
+  "frameworks": {
+    "net462": {
+      
+    }
+  }
+}

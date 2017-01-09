@@ -1,0 +1,147 @@
+﻿
+@model Models.Investments
+
+@{
+    ViewBag.Title = "ClientFundsSince";
+    Layout = "layout,cshtml";
+}
+<!DOCTYPE html>
+
+<h2>Client Investments Since Date Report</h2>
+
+<head>
+    <script src="jquery-3.1.1.min.js"></script>
+    @*<script src="http://code.jquery.com/jquery-1.10.1.min.js" type='text/javascript'></script>*@
+</head>
+
+
+<form method="post" action="~/Reports/ClientInvSince/1">
+
+    @using (Html.BeginForm())
+    {
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        //+++++++++++++++++++++++++error occurs here +++++++++++++++++++++++++++++++++++++++++
+        @Html.DropDownList("Client", ViewData["client"] as SelectList, "Select Client", new { id = "Client_ID", style = "width: 150px;" })<br />
+    <br />
+    <br />
+    @Html.DropDownListFor(model => model.Fund, (SelectList)ViewBag.SortedFunds)
+    @*<select id="Fund" name="Fund" , style="width: 150px;"></select><br />*@
+    <div class="form-group">
+        <br />
+        <br />
+        <label id='Since'>Since</label>
+        @Html.LabelFor(model => model.PurchaseDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PurchaseDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PurchaseDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <br />
+        <br />
+        <button type='submit'>Submit</button>
+    </div>
+
+    }
+
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    <script type="text/jscript">
+        $(document).ready(function () {
+            $('#Client_ID').change(function () {
+                //alert('here');
+
+                $.getJSON('@Url.Action("ClientInvestmentsSince2", "Reports")', { id: $('#Client_ID').val() }, function (data) {
+                    //    var items = '<option>Select Fund</option>';
+                    //    alert('in the getJSON success logic')
+                    //    $.each(data, function (i, Fund)
+                    //    {
+                    //        alert('in the each logic - i: ' + i)
+                    //        items += "<option value='" + i + "'>" + fund.Value + "</option>";
+                    //        //alert('Fund.i' + i + "  Fund.val" + fund.Value)
+                    //        //alert('Fund.i' + Fund.i + "  Fund.val" + Fund.val)
+                    //    })
+                    //    .fail(function (jqxhr, textStatus, errorMessage) { alert(errorMessage); });
+
+                    //    //assign the result to the Fund selectlist
+                    //    $('#Fund').html(items);
+                    //});
+                    //alert('here2');
+                });
+                //alert('here3');
+            });
+            // alert('here4');
+        });
+
+    </script>
+
+
+</form>
+
+
+
+
+ 
+
+@*@model WebApplicationMVC01.Models.Product
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Product</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

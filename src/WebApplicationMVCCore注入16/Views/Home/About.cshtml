@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"].</h2>
+@*<h3>@ViewData["Message"]</h3>*@
+@{
+
+
+//var a = new SelectListItem() { Selected = false,Text="abc",Value="abc", Group="Uo" };
+//var c = new List<SelectListItem>() { a,a,a};
+}
+@*<p>Use this area to provide additional information.</p>*@
+@*<div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Dropdown
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li class="dropdown-header">Dropdown header</li>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Another link</a></li>
+            <li class="dropdown-header">Dropdown header</li>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Another link</a></li>
+        </ul>
+    </div>
+    <select>
+        <optgroup label="Swedish Cars">*@
+@*@foreach (SelectListItem listItem in c as List<SelectListItem>)
+            {
+                <option value=" "></option>
+            }
+        </optgroup>
+    </select> *@
+
+@*<select>
+        <optgroup label="Swedish Cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+        </optgroup>
+        <optgroup label="German Cars">
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </optgroup>
+    </select>*@
+@model WebApplicationMVCCore注入16.Controllers.HomeController.CarViewModel
+<h2>HTML DropDownList 3 Demos</h2>
+<div class="row">
+    <div class="col-md-4">       
+        <h3>the first Demo</h3>
+        @Html.DropDownList("CarsList")
+    </div>
+    <div class="col-md-4">
+        <h3>
+            the second Demo
+        </h3>
+            @Html.DropDownList("CarsList2")
+</div>
+    <div class="col-md-4">
+        <h3>the third Demo</h3>
+        <select asp-for="Car" asp-items="Model.Cars"></select>
+    </div>
+</div>
